@@ -1,0 +1,44 @@
+rails generate scaffold post title:string body:text author:string published:boolean published_date:datetime
+
+rake db:migrate
+rake db:test:load
+rake db:test:prepare
+
+  test "should not save post without title" do
+    post = Post.new
+    assert !post.save
+  end
+
+rake test
+
+validates :title, presence: true
+
+rake test
+
+  test "the publish_post method sets the published attribute to true" do
+    post = posts(:one)
+    post.publish_post
+    assert post.published
+  end
+
+rake test
+
+  def publish_post
+    update(published: true)
+  end
+
+rake test
+
+  test "the publish_post method sets the published_date attribute to current date time" do
+    post = posts(:one)
+    post.publish_post
+    assert_equal post.published_date.to_i, DateTime.now.utc.to_i
+  end
+
+rake test
+  
+  update(published: true, published_date: DateTime.now.utc)
+
+rake test
+
+  
