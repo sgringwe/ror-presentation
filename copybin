@@ -42,6 +42,10 @@ rake test
 
 rake test
 
+
+### controller
+@posts = Post.all.order(published_date: :desc)
+
 gem 'paperclip' <---- Gemfile
 
 Let's turn this into a photo blog. All posts must have a photo attached

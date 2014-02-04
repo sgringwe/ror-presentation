@@ -31,6 +31,13 @@ Post.create([
     published_date: 6.days.ago
   },
   {
+    title: "NYC is busy",
+    body: "Took a cab. They honked a lot. I don't think it helped. Didn't get to play trivia.",
+    author: "Scott Ringwelski",
+    published: true,
+    published_date: 7.days.ago
+  },
+  {
     title: "China!",
     body: "Regretting my trip to China. There was a wall and I couldn't get in.",
     author: "Scott Ringwelski",
