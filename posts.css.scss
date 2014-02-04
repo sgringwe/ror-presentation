@@ -1,0 +1,59 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 60px;
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      color: inherit !important;
+    }
+  }
+
+  .blog-description {
+    font-size: 20px;
+    color: #999;
+  }
+}
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+
+  .blog-post {
+    margin-bottom: 60px;
+
+    .blog-post-title {
+      margin-bottom: 5px;
+      font-size: 40px;
+
+      a {
+        text-decoration: none;
+        color: inherit !important;
+      }
+    }
+
+    .blog-post-meta {
+      margin-bottom: 20px;
+      color: #999;
+    }
+    
+    .blog-post-photo {
+      width: 100%;
+    }
+  }
+}
+
+.top-right-corner {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

@@ -1,0 +1,11 @@
+<div class="blog-post">
+  <h2 class="blog-post-title"><a href="<%= post_path(@post) %>"><%= @post.title %></a></h2>
+  <p class="blog-post-meta">
+    <span><%= @post.published_date.strftime("%m/%d/%Y") %></span>
+    by
+    <span><%= @post.author %></span>
+    <%= link_to "Edit", edit_post_path(@post) %>
+  </p>
+  <p><%= @post.body %></p>
+  <%= image_tag @post.photo.url, class: 'blog-post-photo img-rounded' if @post.photo? %>
+</div>

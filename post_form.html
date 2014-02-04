@@ -1,0 +1,38 @@
+<%= form_for @post, html: { class: 'form' } do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: 'form-control', rows: '20' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author %><br>
+    <%= f.text_field :author, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :published %><br>
+    <%= f.check_box :published %>
+  </div>
+  <div class="form-group">
+    <%= f.label :published_date %><br>
+    <%= f.datetime_select :published_date %>
+  </div>
+  <div class="form-group">
+    <%= link_to "Cancel", @post, class: 'btn btn-default' %>
+    <%= f.submit class: 'btn btn-success pull-right' %>
+  </div>
+<% end %>

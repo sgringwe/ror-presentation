@@ -5,7 +5,8 @@ rake db:test:load
 rake db:test:prepare
 
   test "should not save post without title" do
-    post = Post.new
+    post = posts(:one)
+    post.title = nil
     assert !post.save
   end
 
@@ -41,4 +42,25 @@ rake test
 
 rake test
 
-  
+gem 'paperclip' <---- Gemfile
+
+Let's turn this into a photo blog. All posts must have a photo attached
+
+rails g migration add_photos_to_posts
+
+add_attachment :posts, :photo
+rake db:migrate
+
+has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+params.require(:post).permit(:title, :body, :author, :published, :published_date, :photo)
+
+  <div class="form-group">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo %>
+  </div>
+
+
+
+heroku apps:create

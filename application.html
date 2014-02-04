@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scott's Blog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div class="blog-header">
+      <h1 class="blog-title"><a href="/posts">Scott's Example Blog</a></h1>
+      <p class="lead blog-description">For showing during the rails presentation</p>
+    </div>
+    <div class="blog-main">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
